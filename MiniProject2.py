@@ -1,17 +1,19 @@
-from appledevices import *
+#this program is an apple inventory program that shows details of the product you want to purchase and gives you options
+from appledevices import * #importing
 
-start = True
+start = True #starting 
 print("Apple inventory\n------------------") 
 #takes user's information
-#user=input("customer's name: ")
+user=input("customer's name: ")
+print("hello..", user,)
 #making a list of devices
 devices=['iPhone','iPad','MacBook']
 
 
-while start:
+while start: #loop
     #printing the list for the user to choose the purchase
     for i in range(len(devices)):
-        print(f"{i+1} {devices[i]}")
+        print(f"{i+1} {devices[i]}") #starts at 1
     print("")
     #asking for input& storing it in a variable
     itemIndex = int(input('please select a device you want to purchase:'))
@@ -29,7 +31,7 @@ while start:
         sim = input("dual sim? enter True or False: ")
         if sim.lower() != "true" or "false": #boolean
             sim = "false"
-        your_iPhone = iPhone(model, memory, sim) #created new iphone
+        your_iPhone = iPhone(model, memory, sim, 0 ) #created new iphone
         print(your_iPhone)
 
     #ipad
@@ -44,7 +46,7 @@ while start:
         pencil = input("would you like to purchase the pencil too? enter True or False: ")
         if pencil.lower() != "true" or "false": #boolean
             pencil = "false"
-        your_iPad = iPad(model, memory, pencil) #created new ipad 
+        your_iPad = iPad(model, memory, pencil,0) #created new ipad 
         print(your_iPad)
 
     #macbook
@@ -56,7 +58,7 @@ while start:
         memory=input("128 or 512 GB of memory?")
         if memory != "512" or "128":
             memory = '128'
-        your_MacBook = MacBook(model, memory) #created new macbook
+        your_MacBook = MacBook(model, memory,0) #created new macbook
         print(your_MacBook)
     
     proceed = input("would you like to purchase another item? yes or no? ") #prompts the user whether to try again or not

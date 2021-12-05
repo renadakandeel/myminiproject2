@@ -1,12 +1,13 @@
 #base class 
 class apple():
-    def __init__(self,model_name,memory):
+    def __init__(self,model_name,memory,price):
         self.model_name=model_name
         self.memory=memory
+        self.price=0
 #inherited classes
 class iPad (apple):
-    def __init__(self, model_name, memory,pencil): #parameters
-        super().__init__(model_name, memory)
+    def __init__(self, model_name, memory,pencil,price): #parameters
+        super().__init__(model_name, memory,price)
         self.pencil=pencil
 
     def get_price(self): 
@@ -24,8 +25,8 @@ class iPad (apple):
 
 #inherits from base class
 class iPhone (apple):
-    def __init__(self, model_name, memory,dual_sim): #parameters
-        super().__init__(model_name, memory)
+    def __init__(self, model_name, memory,dual_sim,price): #parameters
+        super().__init__(model_name, memory,price)
         self.dual_sim=dual_sim
     
     def get_price(self):
@@ -42,8 +43,8 @@ class iPhone (apple):
         return f"This Item costs ${self.get_price()}, Details - iPhone{self.model_name}',' '{self.memory}GB'','' contains dual_sim {self.dual_sim}'\n thank you for your purchase!'"
 
 class MacBook (apple): #inherits from base class
-    def __init__(self, model_name, memory): #parameters
-        super().__init__(model_name, memory)
+    def __init__(self, model_name, memory,price): #parameters
+        super().__init__(model_name, memory,price)
 
     def get_price(self):
         self.price = 2000 #minimum price
